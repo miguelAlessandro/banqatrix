@@ -6,6 +6,7 @@ html, body {
 	— space: 1.5em 0;
 	— space: 2em 0;
 }
+
 .Site {
 	display: flex;
 	flex-direction: column;
@@ -22,6 +23,9 @@ html, body {
 	margin-top: var( — space);
 	height: 0;
 	visibility: hidden;
+}
+.App-header {
+	margin-bottom: 1em;
 }
 
 @keyframes App-logo-spin {
