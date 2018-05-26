@@ -14,7 +14,7 @@ export default class Main extends Component {
 							<div className="main-text">Porque unidos ahorramos mejor</div>
 							<div className="submain-text">Tus ahorros de grupales de siempre de manera digital y segura</div>
 							<div className="main-btn">
-								<Link to="/banqatrix/create-bank" className="btn btn-primary">Crear banquito</Link>
+								<Link to="/banqatrix/create-bank" className="btn btn-warning">Crear banquito</Link>
 							</div>
 						</div>
 					</Container>

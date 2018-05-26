@@ -20,15 +20,11 @@ export default class Bank extends React.Component {
                 <Row>
                     <Col sm="12">
                         <p>Integrantes</p>
-                        <NavItem>
-                          <NavLink to="/">Silene Oliveira</NavLink>
-                        </NavItem>
-                        <NavItem>
-                          <NavLink to="/">Andres Fonollosa</NavLink>
-                        </NavItem>
-                        <NavItem>
-                          <NavLink to="/">Sergio Marquina</NavLink>
-                        </NavItem>
+                        <ul>
+                          <li to="/">Silene Oliveira</li>
+                          <li to="/">Andres Fonollosa</li>
+                          <li to="/">Sergio Marquina</li>
+                        </ul>
                     </Col>
                 </Row>
                 <Button color="success">Pagar cuota</Button>
