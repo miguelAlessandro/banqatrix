@@ -24,9 +24,6 @@ html, body {
 	height: 0;
 	visibility: hidden;
 }
-.App-header {
-	margin-bottom: 1em;
-}
 
 @keyframes App-logo-spin {
 	from { transform: rotate(0deg); }
