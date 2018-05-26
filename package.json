@@ -2,7 +2,7 @@
   "name": "banqatrix",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rzmogrovejo.github.io/banqatrix/",
+  "homepage": "https://rzmogrovejo.github.io/banqatrix",
   "dependencies": {
     "bootstrap": "^4.1.1",
     "gh-pages": "^1.1.0",

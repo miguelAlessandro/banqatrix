@@ -39,7 +39,7 @@ export default class Header extends Component {
 			<div>
 				<Navbar color="dark" dark expand="md">
 					<Container>
-						<NavbarBrand href="#" className="main-icon">
+						<NavbarBrand href="/banqatrix" className="main-icon">
 							<span className="main-icon-logo">
 								<FaDiamond/>
 							</span>
@@ -51,11 +51,14 @@ export default class Header extends Component {
 						<Collapse isOpen={this.state.isOpen} navbar>
 							<Nav className="ml-auto" navbar>
 								<NavItem className="nav-link">
-									<Link to="/">Home</Link>
+									<Link to="/banqatrix">Home</Link>
 								</NavItem>
 								<NavItem className="nav-link">
-									<Link to="/create-bank">Crea tu banquito</Link>
+									<Link to="/banqatrix/create-bank">Crea tu banquito</Link>
 								</NavItem>
+								<NavItem className="nav-link">
+									<Link to="/banqatrix/account">Mi Cuenta</Link>
+								</NavItem>								
 							</Nav>
 						</Collapse>
 					</Container>

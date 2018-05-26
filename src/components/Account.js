@@ -1,5 +1,5 @@
 import React from 'react'
-import {BankList, BankForm} from './Bank';
+import Bank, {BankList, BankForm} from './Bank';
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText, Nav, NavItem, NavLink } from 'reactstrap';
 
 export default class Account extends React.Component {
@@ -12,7 +12,7 @@ export default class Account extends React.Component {
             <Container>
                 <Row>
                     <Col sm="4">
-                        <BankForm></BankForm>
+                        <Bank></Bank>
                     </Col>
                     <Col sm="8">
                         <BankList></BankList>
