@@ -21,7 +21,7 @@ export default class Bank extends React.Component {
 }
 
 
-class BankForm extends React.Component {
+export default class BankForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -64,6 +64,24 @@ class BankForm extends React.Component {
                 </label>
                 <input type="submit" value="Submit" />
             </form>
+        );
+    }
+}
+
+
+export default class BankList extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div>
+                <ul>Amigos ahorradores</ul>
+                <ul>Familia ahorradora</ul>
+                <ul>Estafa piramidal</ul>
+                <ul>Los misios</ul>
+            </div>
         );
     }
 }
