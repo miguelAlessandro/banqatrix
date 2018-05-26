@@ -18,9 +18,9 @@ class App extends Component {
 							<Header />
 						</div>
 						<div className="main">
-                            <Route exact path="/" component={Home} />
-                            <Route path="/create-bank" component={BankForm} />
-                            <Route path="/account" component={Account} />
+                            <Route exact path="" component={Home} />
+                            <Route exact path="/create-bank" component={BankForm} />
+                            <Route exact path="/account" component={Account} />
 						</div>
 					</div>
 					<Footer />
