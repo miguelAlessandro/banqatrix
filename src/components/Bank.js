@@ -21,7 +21,7 @@ export default class Bank extends React.Component {
 }
 
 
-export default class BankForm extends React.Component {
+export class BankForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -69,7 +69,7 @@ export default class BankForm extends React.Component {
 }
 
 
-export default class BankList extends React.Component {
+export class BankList extends React.Component {
     constructor(props) {
         super(props);
     }
