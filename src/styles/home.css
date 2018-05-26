@@ -1,12 +1,48 @@
 .background-main-img{
 	background-image: url('../images/background-main-section.jpg');
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-attachment: fixed;
     background-size: 100%;
     background-position: center;
     height: 500px;
-}
 
+}
+.text-section{
+	-webkit-filter: brightness(100%); /* Safari */
+    filter: brightness(100%);
+}
+.text-section{
+	color: white;
+}
 .main-text{
-	
+	padding-top: 10%;
+	font-size: 7vh;
+}
+.submain-text{
+	padding-top: 30px;
+	font-size: 3vh;
+}
+.main-btn{
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+.section-2{
+	color: white;
+}
+.box-1{
+	background-color: #195fba;
+}
+.box-2{
+	background-color: #181c63;
+}
+.box-3{
+	background-color: #0fd8b0;
+}
+.box-title{
+	padding-top: 30px;
+	padding-bottom: 7px;
+	font-size: 30px;
+}
+.box-body{
+	padding-top: 7px;
 }

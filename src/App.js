@@ -17,16 +17,6 @@ class App extends Component {
 							<Header />
 						</div>
 						<div className="main">
-                            <div class="nav-bar">
-                                <Nav horizontal>
-                                    <NavItem>
-                                      <Link to="/">Home</Link>
-                                    </NavItem>
-                                    <NavItem>
-                                      <Link to="/create-bank">Crea tu banquito</Link>
-                                    </NavItem>
-                                </Nav>
-                            </div>
                             <Route exact path="/" component={Home} />
                             <Route path="/create-bank" component={BankForm} />
 						</div>
