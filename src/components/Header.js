@@ -39,7 +39,7 @@ export default class Header extends Component {
 			<div>
 				<Navbar color="dark" dark expand="md">
 					<Container>
-						<NavbarBrand href="/banqatrix" className="main-icon">
+						<NavbarBrand className="main-icon">
 							<span className="main-icon-logo">
 								<FaDiamond/>
 							</span>

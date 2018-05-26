@@ -52,7 +52,7 @@ export default class Main extends Component {
 								</div>
 								<hr/>
 								<div className="box-body">
-									Comparte tu historial con una entidad financiera y accede a préstamos increíbles.
+									Comparte tu actividad de ahorro con una entidad financiera y accede a préstamos increíbles.
 								</div>
 								<div className="main-btn">
 									<Link to="/banqatrix/create-bank" className="btn btn-warning">Crear banquito</Link>
