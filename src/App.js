@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
-import Bank from './components/Bank';
+import Bank, {BankList, BankForm} from './components/Bank';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends Component {
@@ -16,17 +16,17 @@ class App extends Component {
 							<Header />
 						</div>
 						<div className="main">
-							  <ul>
-								<li>
+							<ul>
+							    <li>
 								  <Link to="/">Home</Link>
 								</li>
 								<li>
-								  <Link to="/bank">Bank</Link>
+								  <Link to="/create-bank">Crea tu banquito</Link>
 								</li>
-							  </ul>
+							</ul>
 						</div>
 						<Route exact path="/" component={Main} />
-						<Route path="/bank" component={Bank} />
+						<Route path="/create-bank" component={BankForm} />
 					</div>
 					<Footer />
 				</div>

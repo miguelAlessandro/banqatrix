@@ -1,4 +1,5 @@
 import React from 'react'
+import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 export default class Bank extends React.Component {
     constructor(props) {
@@ -45,25 +46,42 @@ export class BankForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Nombre:
-                    <input type="text" value={this.state.name} />
-                </label>
-                <label>
-                    Periodicidad:
-                    <input type="text" value={this.state.periodicity} />
-                </label>
-                <label>
-                    Cuota:
-                    <input type="number" value={this.state.fee} />
-                </label>
-                <label>
-                    Integrantes:
-                    <input type="text" value={this.state.members} />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
+            <Form onSubmit={this.handleSubmit}>
+                <FormGroup row>
+                    <Label sm={2}>Nombre:</Label>
+                    <Col sm={10}>
+                        <Input type="text" value={this.state.name} />
+                    </Col>
+                </FormGroup>
+                <FormGroup row>
+                    <Label sm={2}>Periodicidad:</Label>
+                    <Col sm={10}>
+                        <Input type="select" value={this.state.periodicity}>
+                            <option value="semanal">Semanal</option>
+                            <option value="quincenal">Quincenal</option>
+                            <option selected value="mensual">Mensual</option>
+                            <option value="bimensual">Bimensual</option>
+                        </Input>
+                    </Col>
+                </FormGroup>
+                <FormGroup row>
+                    <Label sm={2}>Cuota:</Label>
+                    <Col sm={10}>
+                        <Input type="number" value={this.state.fee} />
+                    </Col>
+                </FormGroup>
+                <FormGroup row>
+                    <Label sm={2}>Integrantes:</Label>
+                    <Col sm={10}>
+                        <Input type="text" value={this.state.members} />
+                    </Col>
+                </FormGroup>
+                <FormGroup check row>
+                    <Col sm={{size: 10, offset: 2}}>
+                        <Button>Crear</Button>
+                    </Col>
+                </FormGroup>
+            </Form>
         );
     }
 }
