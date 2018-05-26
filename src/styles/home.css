@@ -1,0 +1,12 @@
+.background-main-img{
+	background-image: url('../images/background-main-section.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    background-position: center;
+    height: 500px;
+}
+
+.main-text{
+	
+}

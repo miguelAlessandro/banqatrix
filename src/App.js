@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
-import Main from './components/Main';
+import Home from './components/Home';
 import Footer from './components/Footer';
 import Bank, {BankList, BankForm} from './components/Bank';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -17,24 +17,18 @@ class App extends Component {
 							<Header />
 						</div>
 						<div className="main">
-                            <Container>
-                                <Row>
-                                    <Col sm="3">
-                                        <Nav vertical>
-                                            <NavItem>
-                                              <Link to="/">Home</Link>
-                                            </NavItem>
-                                            <NavItem>
-                                              <Link to="/create-bank">Crea tu banquito</Link>
-                                            </NavItem>
-                                        </Nav>
-                                    </Col>
-                                    <Col sm="9">
-                                        <Route exact path="/" component={Main} />
-                                        <Route path="/create-bank" component={BankForm} />
-                                    </Col>
-                                </Row>
-                            </Container>
+                            <div class="nav-bar">
+                                <Nav horizontal>
+                                    <NavItem>
+                                      <Link to="/">Home</Link>
+                                    </NavItem>
+                                    <NavItem>
+                                      <Link to="/create-bank">Crea tu banquito</Link>
+                                    </NavItem>
+                                </Nav>
+                            </div>
+                            <Route exact path="/" component={Home} />
+                            <Route path="/create-bank" component={BankForm} />
 						</div>
 					</div>
 					<Footer />

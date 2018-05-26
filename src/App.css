@@ -25,7 +25,10 @@ html, body {
 	visibility: hidden;
 }
 .App-header {
-	margin-bottom: 1em;
+	
+}
+.nav-bar a{
+	color: white;
 }
 
 @keyframes App-logo-spin {

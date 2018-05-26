@@ -11,8 +11,11 @@ import {
 	DropdownToggle,
 	DropdownMenu,
 	DropdownItem, Container } from 'reactstrap';
-import FaBank from 'react-icons/lib/fa/bank';
+import FaDiamond from 'react-icons/lib/fa/diamond';
 import '../styles/header.css';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Home from '../components/Home';
+import Bank, {BankList, BankForm} from '../components/Bank';
 
 export default class Header extends Component {
 
@@ -38,9 +41,9 @@ export default class Header extends Component {
 					<Container>
 						<NavbarBrand href="#" className="main-icon">
 							<span className="main-icon-logo">
-								<FaBank/>
+								<FaDiamond/>
 							</span>
-							<span>
+							<span className="main-icon-text">
 								Bancatrix
 							</span>
 						</NavbarBrand>
@@ -48,28 +51,11 @@ export default class Header extends Component {
 						<Collapse isOpen={this.state.isOpen} navbar>
 							<Nav className="ml-auto" navbar>
 								<NavItem>
-									<NavLink href="/components/">Components</NavLink>
+									<Link to="/">Home</Link>
 								</NavItem>
 								<NavItem>
-									{/*<NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>*/}
+									<Link to="/create-bank">Crea tu banquito</Link>
 								</NavItem>
-								<UncontrolledDropdown nav inNavbar>
-									<DropdownToggle nav caret>
-										Options
-									</DropdownToggle>
-									<DropdownMenu right>
-									<DropdownItem>
-										Option 1
-									</DropdownItem>
-									<DropdownItem>
-										Option 2
-									</DropdownItem>
-									<DropdownItem divider />
-									<DropdownItem>
-										Reset
-									</DropdownItem>
-									</DropdownMenu>
-								</UncontrolledDropdown>
 							</Nav>
 						</Collapse>
 					</Container>
