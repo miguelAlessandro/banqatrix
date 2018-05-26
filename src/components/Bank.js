@@ -62,42 +62,44 @@ export class BankForm extends React.Component {
 
     render() {
         return (
-            <Form onSubmit={this.handleSubmit}>
-                <FormGroup row>
-                    <Label sm={2}>Nombre:</Label>
-                    <Col sm={10}>
-                        <Input type="text" value={this.state.name} />
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                    <Label sm={2}>Periodicidad:</Label>
-                    <Col sm={10}>
-                        <Input type="select" value={this.state.periodicity}>
-                            <option value="semanal">Semanal</option>
-                            <option value="quincenal">Quincenal</option>
-                            <option selected value="mensual">Mensual</option>
-                            <option value="bimensual">Bimensual</option>
-                        </Input>
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                    <Label sm={2}>Cuota:</Label>
-                    <Col sm={10}>
-                        <Input type="number" value={this.state.fee} />
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                    <Label sm={2}>Integrantes:</Label>
-                    <Col sm={10}>
-                        <Input type="text" value={this.state.members} />
-                    </Col>
-                </FormGroup>
-                <FormGroup check row>
-                    <Col sm={{size: 10, offset: 2}}>
-                        <Button>Crear</Button>
-                    </Col>
-                </FormGroup>
-            </Form>
+            <Container className="form">
+                <Form onSubmit={this.handleSubmit}>
+                    <FormGroup row>
+                        <Label sm={2}>Nombre:</Label>
+                        <Col sm={10}>
+                            <Input type="text" value={this.state.name} />
+                        </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                        <Label sm={2}>Periodicidad:</Label>
+                        <Col sm={10}>
+                            <Input type="select" value={this.state.periodicity}>
+                                <option value="semanal">Semanal</option>
+                                <option value="quincenal">Quincenal</option>
+                                <option selected value="mensual">Mensual</option>
+                                <option value="bimensual">Bimensual</option>
+                            </Input>
+                        </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                        <Label sm={2}>Cuota:</Label>
+                        <Col sm={10}>
+                            <Input type="number" value={this.state.fee} />
+                        </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                        <Label sm={2}>Integrantes:</Label>
+                        <Col sm={10}>
+                            <Input type="text" value={this.state.members} />
+                        </Col>
+                    </FormGroup>
+                    <FormGroup check row>
+                        <Col sm={{size: 10, offset: 2}}>
+                            <a href="/" className="btn btn-primary">Crear</a>
+                        </Col>
+                    </FormGroup>
+                </Form>
+            </Container>
         );
     }
 }

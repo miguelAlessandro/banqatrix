@@ -10,3 +10,9 @@
 	font-size: 40px;
 	font-family: 'Baumans', cursive;
 }
+.nav-link a{
+	color: white;
+}
+.nav-link a:hover{
+	color: white;
+}

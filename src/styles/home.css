@@ -4,7 +4,7 @@
     background-attachment: fixed;
     background-size: 100%;
     background-position: center;
-    height: 500px;
+    height: 100%;
 
 }
 .text-section{
@@ -15,11 +15,11 @@
 	color: white;
 }
 .main-text{
-	padding-top: 10%;
+	padding-top: 5%;
 	font-size: 7vh;
 }
 .submain-text{
-	padding-top: 30px;
+	padding-top: 2%;
 	font-size: 3vh;
 }
 .main-btn{

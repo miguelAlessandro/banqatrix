@@ -50,10 +50,10 @@ export default class Header extends Component {
 						<NavbarToggler onClick={this.toggle} />
 						<Collapse isOpen={this.state.isOpen} navbar>
 							<Nav className="ml-auto" navbar>
-								<NavItem>
+								<NavItem className="nav-link">
 									<Link to="/">Home</Link>
 								</NavItem>
-								<NavItem>
+								<NavItem className="nav-link">
 									<Link to="/create-bank">Crea tu banquito</Link>
 								</NavItem>
 							</Nav>
