@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText, Nav, NavItem, NavLink } from 'reactstrap';
 
 export default class Bank extends React.Component {
     constructor(props) {
@@ -8,15 +8,31 @@ export default class Bank extends React.Component {
 
     render() {
         return (
-            <div>
-                <p>Amigos Ahorradores</p>
-                <p>Periodo 5/8</p>
-                <p>Integrantes</p>
-                <ul>Jean Pierre Mandujano</ul>
-                <ul>Renzo Mogrovejo</ul>
-                <ul>Miguel Miní</ul>
-                <ul>José Huallpa</ul>
-            </div>
+            <Container>
+                <Row>
+                    <Col sm="6">
+                        <p>Amigos Ahorradores</p>
+                    </Col>
+                    <Col sm="6">
+                        <p>Periodo 5/8</p>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col sm="12">
+                        <p>Integrantes</p>
+                        <NavItem>
+                          <NavLink to="/">Silene Oliveira</NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink to="/">Andres Fonollosa</NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink to="/">Sergio Marquina</NavLink>
+                        </NavItem>
+                    </Col>
+                </Row>
+                <Button color="success">Pagar cuota</Button>
+            </Container>
         );
     }
 }
@@ -94,12 +110,20 @@ export class BankList extends React.Component {
 
     render() {
         return (
-            <div>
-                <ul>Amigos ahorradores</ul>
-                <ul>Familia ahorradora</ul>
-                <ul>Estafa piramidal</ul>
-                <ul>Los misios</ul>
-            </div>
+            <Nav vertical>
+                <NavItem>
+                  <NavLink to="/">Amigos Ahorradores</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink to="/">Banquito Familia</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink to="/">Pro Navidad</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink to="/">Rusia 2018</NavLink>
+                </NavItem>
+            </Nav>
         );
     }
 }
