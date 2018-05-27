@@ -3,6 +3,8 @@ import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText, N
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Alert } from 'reactstrap';
 import '../styles/bank.css';
+import { ListGroup, ListGroupItem } from 'reactstrap';
+import { Progress } from 'reactstrap';
 
 export default class Bank extends React.Component {
     constructor(props) {
@@ -13,11 +15,14 @@ export default class Bank extends React.Component {
         return (
             <Container>
                 <Row>
-                    <Col sm="6">
-                        <p>Amigos Ahorradores</p>
+                    <Col sm="12">
+                        <strong>Amigos Ahorradores</strong>
                     </Col>
-                    <Col sm="6">
-                        <p>Periodo 5/8</p>
+                    <br/>
+                    <br/>
+                    <Col sm="12">
+                        <Progress value={75} color="success"/>
+                        <div className="text-center">Periodo 5/8</div>
                     </Col>
                 </Row>
                 <Row>
@@ -41,10 +46,10 @@ export class BankForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: null,
-            periodicity: null,
-            fee: null,
-            members: null,
+            name: "",
+            periodicity: "",
+            fee: "",
+            members: "",
             modal: false
         };
 
@@ -63,13 +68,17 @@ export class BankForm extends React.Component {
 
     toggle() {
         this.setState({
-          modal: !this.state.modal
-      });
+            modal: !this.state.modal,
+            name: "manduinca"
+        });
+        if (this.state.modal) {
+            localStorage.setItem('state', JSON.stringify(this.state));    
+        }
     }    
 
     render() {
         return (
-            <div className="form-bank">
+            <div className="content">
             <Container className="form">
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup row>
@@ -84,7 +93,7 @@ export class BankForm extends React.Component {
                             <Input type="select" value={this.state.periodicity}>
                                 <option value="semanal">Semanal</option>
                                 <option value="quincenal">Quincenal</option>
-                                <option selected value="mensual">Mensual</option>
+                                <option value="mensual">Mensual</option>
                                 <option value="bimensual">Bimensual</option>
                             </Input>
                         </Col>
@@ -109,7 +118,7 @@ export class BankForm extends React.Component {
                 </Form>
             </Container>
               <div>
-                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                <Modal isOpen={this.state.modal} toggle={this.toggle}>
                   <ModalHeader toggle={this.toggle}>Creación de cuenta</ModalHeader>
                   <ModalBody>
                       <Alert color="success">
@@ -134,20 +143,23 @@ export class BankList extends React.Component {
 
     render() {
         return (
-            <Nav vertical>
-                <NavItem>
-                  <NavLink to="/">Amigos Ahorradores</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink to="/">Banquito Familia</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink to="/">Pro Navidad</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink to="/">Rusia 2018</NavLink>
-                </NavItem>
-            </Nav>
+            <div>
+                <ListGroup>
+                    <div>Tus cuentas activas</div>
+                    <br/>
+                    <ListGroupItem active>Amigos Ahorradores</ListGroupItem>
+                </ListGroup>
+                <br/>
+                <br/>
+                <ListGroup>
+                    <div>Otros Banquitos que puedes unirte:</div>
+                    <br/>
+                    <ListGroupItem>Banquito Familia</ListGroupItem>
+                    <ListGroupItem>Pro Navidad</ListGroupItem>
+                    <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
+                    <ListGroupItem>Rusia 2018</ListGroupItem>
+                </ListGroup>
+            </div>
         );
     }
 }
