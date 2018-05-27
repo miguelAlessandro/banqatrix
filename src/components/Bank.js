@@ -1,5 +1,8 @@
 import React from 'react'
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText, Nav, NavItem, NavLink } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Alert } from 'reactstrap';
+import '../styles/bank.css';
 
 export default class Bank extends React.Component {
     constructor(props) {
@@ -41,10 +44,12 @@ export class BankForm extends React.Component {
             name: null,
             periodicity: null,
             fee: null,
-            members: null
+            members: null,
+            modal: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.toggle = this.toggle.bind(this);
     }
 
     handleSubmit(event) {
@@ -56,8 +61,15 @@ export class BankForm extends React.Component {
         });
     }
 
+    toggle() {
+        this.setState({
+          modal: !this.state.modal
+      });
+    }    
+
     render() {
         return (
+            <div className="form-bank">
             <Container className="form">
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup row>
@@ -89,13 +101,27 @@ export class BankForm extends React.Component {
                             <Input type="text" value={this.state.members} />
                         </Col>
                     </FormGroup>
-                    <FormGroup check row>
+                    <FormGroup row>
                         <Col sm={{size: 10, offset: 2}}>
-                            <a href="/" className="btn btn-primary">Crear</a>
+                            <Button className="btn btn-warning" onClick={this.toggle}>Crear</Button>
                         </Col>
                     </FormGroup>
                 </Form>
             </Container>
+              <div>
+                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                  <ModalHeader toggle={this.toggle}>Creación de cuenta</ModalHeader>
+                  <ModalBody>
+                      <Alert color="success">
+                        Se ha creado correctamente la cuenta.
+                      </Alert>
+                  </ModalBody>
+                  <ModalFooter>
+                    <Button color="warning" onClick={this.toggle}>Aceptar</Button>{' '}
+                  </ModalFooter>
+                </Modal>
+              </div>
+            </div>
         );
     }
 }
