@@ -5,6 +5,7 @@ import { Alert } from 'reactstrap';
 import '../styles/bank.css';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import { Progress } from 'reactstrap';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default class Bank extends React.Component {
     constructor(props) {
@@ -47,7 +48,7 @@ export class BankForm extends React.Component {
         super(props);
         this.state = {
             name: "",
-            periodicity: "",
+            periodicity: "semanal",
             fee: "",
             members: "",
             modal: false
@@ -67,30 +68,33 @@ export class BankForm extends React.Component {
     }
 
     toggle() {
+        if (this.state.modal) {
+            localStorage.setItem('state', JSON.stringify(this.state));
+        }
         this.setState({
             modal: !this.state.modal,
-            name: "manduinca"
+            // name: "",
+            // periodicity: "",
+            // fee: "",
+            // members: "",
         });
-        if (this.state.modal) {
-            localStorage.setItem('state', JSON.stringify(this.state));    
-        }
-    }    
+    }
 
     render() {
         return (
             <div className="content">
             <Container className="form">
-                <Form onSubmit={this.handleSubmit}>
+                <Form>
                     <FormGroup row>
                         <Label sm={2}>Nombre:</Label>
                         <Col sm={10}>
-                            <Input type="text" value={this.state.name} />
+                            <Input type="text" value={this.state.name} onChange={(e) => this.setState({name: e.target.value})}/>
                         </Col>
                     </FormGroup>
                     <FormGroup row>
                         <Label sm={2}>Periodicidad:</Label>
                         <Col sm={10}>
-                            <Input type="select" value={this.state.periodicity}>
+                            <Input type="select" value={this.state.periodicity} onChange={(e) => this.setState({periodicity: e.target.value})}>
                                 <option value="semanal">Semanal</option>
                                 <option value="quincenal">Quincenal</option>
                                 <option value="mensual">Mensual</option>
@@ -101,13 +105,13 @@ export class BankForm extends React.Component {
                     <FormGroup row>
                         <Label sm={2}>Cuota:</Label>
                         <Col sm={10}>
-                            <Input type="number" value={this.state.fee} />
+                            <Input type="number" value={this.state.fee} onChange={(e) => this.setState({fee: e.target.value})} />
                         </Col>
                     </FormGroup>
                     <FormGroup row>
                         <Label sm={2}>Integrantes:</Label>
                         <Col sm={10}>
-                            <Input type="text" value={this.state.members} />
+                            <Input type="text" value={this.state.members} onChange={(e) => this.setState({members: e.target.value})} />
                         </Col>
                     </FormGroup>
                     <FormGroup row>
@@ -126,7 +130,7 @@ export class BankForm extends React.Component {
                       </Alert>
                   </ModalBody>
                   <ModalFooter>
-                    <Button color="warning" onClick={this.toggle}>Aceptar</Button>{' '}
+                    <Link to="/banqatrix/account" className="btn btn-warning" onClick={this.toggle}>Aceptar</Link>
                   </ModalFooter>
                 </Modal>
               </div>
